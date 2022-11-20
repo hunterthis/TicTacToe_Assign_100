@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             button7.text = ""
             button8.text = ""
             button9.text = ""
-
+            turntextbox.text = "Player X's Turn"
         }
         button1?.setOnClickListener {
             if (button1.text == "") {
@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
             button4?.setOnClickListener {
                 if (button4.text == "") {
                     if (turntextbox.text == "Player X's Turn") {
@@ -134,5 +135,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-}
 
