@@ -1,9 +1,11 @@
 package com.example.tictactoe_assign_1
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tictactoe_assign_1.R.id.*
 import com.google.android.material.textview.MaterialTextView
+import com.example.tictactoe_assign_1.R.id.textViewTurn as idTextViewTurn
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val button8 = findViewById<Button>(button8)
         val button9 = findViewById<Button>(button9)
         val newgamebutton = findViewById<Button>(button10)
-        val turntextbox = this.findViewById<MaterialTextView>(textView)
+        val turntextbox = this.findViewById<MaterialTextView>(idTextViewTurn)
 
         newgamebutton?.setOnClickListener {
             button1.text = ""
@@ -32,107 +34,280 @@ class MainActivity : AppCompatActivity() {
             button7.text = ""
             button8.text = ""
             button9.text = ""
-
+            button1.isClickable = true
+            button2.isClickable = true
+            button3.isClickable = true
+            button4.isClickable = true
+            button5.isClickable = true
+            button6.isClickable = true
+            button7.isClickable = true
+            button8.isClickable = true
+            button9.isClickable = true
+            turntextbox.text = "Player X's Turn"
         }
+        fun PlayerWin(){
+            button1.isClickable = false
+            button2.isClickable = false
+            button3.isClickable = false
+            button4.isClickable = false
+            button5.isClickable = false
+            button6.isClickable = false
+            button7.isClickable = false
+            button8.isClickable = false
+            button9.isClickable = false
+        }
+        fun onClick() {
+            // horizontal rows X check
+            if (button1.text.toString() === "X") {
+                if (button2.text.toString() === "X") {
+                    if (button3.text.toString() == "X") {
+                  Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button4.text.toString() === "X") {
+                if (button5.text.toString() === "X") {
+                    if (button6.text.toString() == "X") {
+                        Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button7.text.toString() === "X") {
+                if (button8.text.toString() === "X") {
+                    if (button9.text.toString() == "X") {
+                        Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+
+            // vertical rows X check
+            if (button1.text.toString() === "X") {
+                if (button4.text.toString() === "X") {
+                    if (button7.text.toString() == "X") {
+                        Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button2.text.toString() === "X") {
+                if (button5.text.toString() === "X") {
+                    if (button8.text.toString() == "X") {
+                        Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button3.text.toString() === "X") {
+                if (button6.text.toString() === "X") {
+                    if (button9.text.toString() === "X") {
+                        Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            // diagonal x check
+            if (button1.text.toString() === "X") {
+                if (button5.text.toString() === "X") {
+                    if (button9.text.toString() === "X") {
+                        Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button3.text.toString() === "X") {
+                if (button5.text.toString() === "X") {
+                    if (button7.text.toString() === "X") {
+                        Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+
+
+            // horizontal rows X check
+            if (button1.text.toString() === "O") {
+                if (button2.text.toString() === "O") {
+                    if (button3.text.toString() === "O") {
+                        Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button4.text.toString() === "O") {
+                if (button5.text.toString() === "O") {
+                    if (button6.text.toString() === "O") {
+                        Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button7.text.toString() === "O") {
+                if (button8.text.toString() === "O") {
+                    if (button9.text.toString() === "O") {
+                        Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            // vertical rows O check
+            if (button1.text.toString() === "O") {
+                if (button4.text.toString() === "O") {
+                    if (button7.text.toString() === "O") {
+                        Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button2.text.toString() === "O") {
+                if (button5.text.toString() === "O") {
+                    if (button8.text.toString() === "O") {
+                        Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button3.text.toString() === "O") {
+                if (button6.text.toString() === "O") {
+                    if (button9.text.toString() === "O") {
+                        Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            // diagonal O check
+            if (button1.text.toString() === "O") {
+                if (button5.text.toString() === "O") {
+                    if (button9.text.toString() === "O") {
+                        Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+            if (button3.text.toString() === "O") {
+                if (button5.text.toString() === "O") {
+                    if (button7.text.toString() === "O") {
+                        Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
+                    }
+                }
+            }
+        }
+
+
         button1?.setOnClickListener {
             if (button1.text == "") {
                 if (turntextbox.text == "Player X's Turn") {
                     button1.text = "X"
-                    turntextbox.text = "Player O's Turn"
-                } else {
-                    button1.text = "O"
-                    turntextbox.text = "Player X's Turn"
+                     turntextbox.text = "Player O's Turn"
                 }
+                if (button1.text == "") {
+                    if (turntextbox.text == "Player O's Turn") {
+                        button1.text = "O"
+                        turntextbox.text = "Player X's Turn"
+                    }
+                }
+                onClick()
             }
         }
         button2?.setOnClickListener {
-            if (button2.text == "") {
-                if (turntextbox.text == "Player X's Turn") {
-                    button2.text = "X"
-                    turntextbox.text = "Player O's Turn"
-                } else {
-                    button2.text = "O"
-                    turntextbox.text = "Player X's Turn"
+                    if (button2.text == "") {
+                        if (turntextbox.text == "Player X's Turn") {
+                            button2.text = "X"
+                                      turntextbox.text = "Player O's Turn"
+                        } else {
+                            button2.text = "O"
+                            turntextbox.text = "Player X's Turn"
+                        }
+                    }
+                    onClick()
                 }
-                button3?.setOnClickListener {
+        button3?.setOnClickListener {
                     if (button3.text == "") {
                         if (turntextbox.text == "Player X's Turn") {
                             button3.text = "X"
-                            turntextbox.text = "Player O's Turn"
+                                   turntextbox.text = "Player O's Turn"
                         } else {
                             button3.text = "O"
                             turntextbox.text = "Player X's Turn"
                         }
                     }
+                    onClick()
                 }
-            }
-            button4?.setOnClickListener {
-                if (button4.text == "") {
-                    if (turntextbox.text == "Player X's Turn") {
-                        button4.text = "X"
-                        turntextbox.text = "Player O's Turn"
-                    } else {
-                        button4.text = "O"
-                        turntextbox.text = "Player X's Turn"
+        button4?.setOnClickListener {
+                    if (button4.text == "") {
+                        if (turntextbox.text == "Player X's Turn") {
+                            button4.text = "X"
+                            turntextbox.text = "Player O's Turn"
+                        } else {
+                            button4.text = "O"
+                            turntextbox.text = "Player X's Turn"
+                        }
                     }
+                    onClick()
                 }
-            }
-            button5?.setOnClickListener {
-                if (button5.text == "") {
-                    if (turntextbox.text == "Player X's Turn") {
-                        button5.text = "X"
-                        turntextbox.text = "Player O's Turn"
-                    } else {
-                        button5.text = "O"
-                        turntextbox.text = "Player X's Turn"
+        button5?.setOnClickListener {
+                    if (button5.text == "") {
+                        if (turntextbox.text == "Player X's Turn") {
+                            button5.text = "X"
+                            turntextbox.text = "Player O's Turn"
+                        } else {
+                            button5.text = "O"
+                            turntextbox.text = "Player X's Turn"
+                        }
                     }
+                    onClick()
                 }
-            }
-            button6?.setOnClickListener {
-                if (button6.text == "") {
-                    if (turntextbox.text == "Player X's Turn") {
-                        button6.text = "X"
-                        turntextbox.text = "Player O's Turn"
-                    } else {
-                        button6.text = "O"
-                        turntextbox.text = "Player X's Turn"
+        button6?.setOnClickListener {
+                    if (button6.text == "") {
+                        if (turntextbox.text == "Player X's Turn") {
+                            button6.text = "X"
+                            turntextbox.text = "Player O's Turn"
+                        } else {
+                            button6.text = "O"
+                            turntextbox.text = "Player X's Turn"
+                        }
                     }
+                    onClick()
                 }
-            }
-            button7?.setOnClickListener {
-                if (button7.text == "") {
-                    if (turntextbox.text == "Player X's Turn") {
-                        button7.text = "X"
-                        turntextbox.text = "Player O's Turn"
-                    } else {
-                        button7.text = "O"
-                        turntextbox.text = "Player X's Turn"
+        button7?.setOnClickListener {
+                    if (button7.text == "") {
+                        if (turntextbox.text == "Player X's Turn") {
+                            button7.text = "X"
+                            turntextbox.text = "Player O's Turn"
+                        } else {
+                            button7.text = "O"
+                            turntextbox.text = "Player X's Turn"
+                        }
                     }
+                    onClick()
                 }
-            }
-            button8?.setOnClickListener {
-                if (button8.text == "") {
-                    if (turntextbox.text == "Player X's Turn") {
-                        button8.text = "X"
-                        turntextbox.text = "Player O's Turn"
-                    } else {
-                        button8.text = "O"
-                        turntextbox.text = "Player X's Turn"
+        button8?.setOnClickListener {
+                    if (button8.text == "") {
+                        if (turntextbox.text == "Player X's Turn") {
+                            button8.text = "X"
+                            turntextbox.text = "Player O's Turn"
+                        } else {
+                            button8.text = "O"
+                            turntextbox.text = "Player X's Turn"
+                        }
                     }
+                    onClick()
                 }
-            }
-            button9?.setOnClickListener {
-                if (button9.text == "") {
-                    if (turntextbox.text == "Player X's Turn") {
-                        button9.text = "X"
-                        turntextbox.text = "Player O's Turn"
-                    } else {
-                        button9.text = "O"
-                        turntextbox.text = "Player X's Turn"
+        button9?.setOnClickListener {
+                    if (button9.text == "") {
+                        if (turntextbox.text == "Player X's Turn") {
+                            button9.text = "X"
+                            turntextbox.text = "Player O's Turn"
+                        } else {
+                            button9.text = "O"
+                            turntextbox.text = "Player X's Turn"
+                        }
                     }
+                    onClick()
                 }
             }
         }
-    }
-}
 
