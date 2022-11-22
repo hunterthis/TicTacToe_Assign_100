@@ -34,14 +34,35 @@ class MainActivity : AppCompatActivity() {
             button7.text = ""
             button8.text = ""
             button9.text = ""
+            button1.isClickable = true
+            button2.isClickable = true
+            button3.isClickable = true
+            button4.isClickable = true
+            button5.isClickable = true
+            button6.isClickable = true
+            button7.isClickable = true
+            button8.isClickable = true
+            button9.isClickable = true
             turntextbox.text = "Player X's Turn"
+        }
+        fun PlayerWin(){
+            button1.isClickable = false
+            button2.isClickable = false
+            button3.isClickable = false
+            button4.isClickable = false
+            button5.isClickable = false
+            button6.isClickable = false
+            button7.isClickable = false
+            button8.isClickable = false
+            button9.isClickable = false
         }
         fun onClick() {
             // horizontal rows X check
             if (button1.text.toString() === "X") {
                 if (button2.text.toString() === "X") {
                     if (button3.text.toString() == "X") {
-                        Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                  Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -49,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                 if (button5.text.toString() === "X") {
                     if (button6.text.toString() == "X") {
                         Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -56,6 +78,7 @@ class MainActivity : AppCompatActivity() {
                 if (button8.text.toString() === "X") {
                     if (button9.text.toString() == "X") {
                         Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -65,6 +88,7 @@ class MainActivity : AppCompatActivity() {
                 if (button4.text.toString() === "X") {
                     if (button7.text.toString() == "X") {
                         Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -72,6 +96,7 @@ class MainActivity : AppCompatActivity() {
                 if (button5.text.toString() === "X") {
                     if (button8.text.toString() == "X") {
                         Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -79,6 +104,7 @@ class MainActivity : AppCompatActivity() {
                 if (button6.text.toString() === "X") {
                     if (button9.text.toString() === "X") {
                         Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -87,6 +113,7 @@ class MainActivity : AppCompatActivity() {
                 if (button5.text.toString() === "X") {
                     if (button9.text.toString() === "X") {
                         Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -94,6 +121,7 @@ class MainActivity : AppCompatActivity() {
                 if (button5.text.toString() === "X") {
                     if (button7.text.toString() === "X") {
                         Toast.makeText(this, "Player X has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -104,6 +132,7 @@ class MainActivity : AppCompatActivity() {
                 if (button2.text.toString() === "O") {
                     if (button3.text.toString() === "O") {
                         Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -111,6 +140,7 @@ class MainActivity : AppCompatActivity() {
                 if (button5.text.toString() === "O") {
                     if (button6.text.toString() === "O") {
                         Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -118,15 +148,16 @@ class MainActivity : AppCompatActivity() {
                 if (button8.text.toString() === "O") {
                     if (button9.text.toString() === "O") {
                         Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
-
             // vertical rows O check
             if (button1.text.toString() === "O") {
                 if (button4.text.toString() === "O") {
                     if (button7.text.toString() === "O") {
                         Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -134,6 +165,7 @@ class MainActivity : AppCompatActivity() {
                 if (button5.text.toString() === "O") {
                     if (button8.text.toString() === "O") {
                         Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -141,6 +173,7 @@ class MainActivity : AppCompatActivity() {
                 if (button6.text.toString() === "O") {
                     if (button9.text.toString() === "O") {
                         Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -149,6 +182,7 @@ class MainActivity : AppCompatActivity() {
                 if (button5.text.toString() === "O") {
                     if (button9.text.toString() === "O") {
                         Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
@@ -156,17 +190,18 @@ class MainActivity : AppCompatActivity() {
                 if (button5.text.toString() === "O") {
                     if (button7.text.toString() === "O") {
                         Toast.makeText(this, "Player O has won!", Toast.LENGTH_SHORT).show()
+                        PlayerWin()
                     }
                 }
             }
-// end onclick function
         }
+
 
         button1?.setOnClickListener {
             if (button1.text == "") {
                 if (turntextbox.text == "Player X's Turn") {
                     button1.text = "X"
-                      turntextbox.text = "Player O's Turn"
+                     turntextbox.text = "Player O's Turn"
                 }
                 if (button1.text == "") {
                     if (turntextbox.text == "Player O's Turn") {
